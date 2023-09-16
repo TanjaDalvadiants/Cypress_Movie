@@ -1,0 +1,10 @@
+{
+  "success": {
+    "login": "qamid@qamid.ru",
+    "password": "qamid"
+  },
+  "unsuccess": {
+    "login": "login@unsuccess.ru",
+    "password": "unsuccess_password"
+  }
+}
