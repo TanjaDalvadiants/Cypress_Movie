@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "test:login": "npx cypress run --record --group login --spec \"cypress/e2e/login.cy.js\" --ci-build-id 2",
+    "test:mainPage": "npx cypress run --record --group mainPage --spec \"cypress/e2e/mainPage.cy.js\" --ci-build-id 2",
+    "test:movieBooking": "npx cypress run --record --group movieBooking --spec \"cypress/e2e/movieBooking.cy.js\" --ci-build-id 2",
+
+    "test:parallel": "npm run test:login & npm run test:mainPage  & npm run test:movieBooking"
   },
   "author": "",
   "license": "ISC",
