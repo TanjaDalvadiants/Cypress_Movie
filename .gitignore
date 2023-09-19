@@ -6,6 +6,7 @@
 *.code-workspace
 **/.DS_Store
 **/node_modules/
+cypress/videos
 
 
 # Local History for Visual Studio Code
