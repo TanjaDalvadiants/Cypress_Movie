@@ -4,12 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:login:chrome": "npx cypress run --record --group login --spec \"cypress/e2e/login/*\" --browser chrome",
-    "test:logic:chrome": "npx cypress run --record --group mainPage --spec \"cypress/e2e/logic/*\" --browser chrome",
-    "test:parallel:chrome": "npm run test:login:chrome & npm run test:logic:chrome",
-    "test:login:firefox": "npx cypress run --record --group login --spec \"cypress/e2e/login/*\" --browser firefox",
-    "test:logic:firefox": "npx cypress run --record --group mainPage --spec \"cypress/e2e/logic/*\" --browser firefox",
-    "test:parallel:firefox": "npm run test:login:firefox & npm run test:logic:firefox"
+    "test:folder:login:chrome": "npx cypress run --record --group login --spec \"cypress/e2e/login/*\" --browser chrome",
+    "test:folder:logic:chrome": "npx cypress run --record --group logic --spec \"cypress/e2e/logic/*\" --browser chrome",
+    "test:parallel:chrome.folder": "npm run test:folder:login:chrome & npm run test:folder:logic:chrome",
+
+    "test:login:chrome": "npx cypress run --record --group login-chrome --spec \"cypress/e2e/login/login.cy.js\" --browser chrome",
+    "test:main:chrome": "npx cypress run --record --group mainPage-chrome --spec \"cypress/e2e/logic/mainPage.cy.js\" --browser chrome",
+    "test:booking:chrome": "npx cypress run --record --group booking-chrome --spec \"cypress/e2e/logic/movieBooking.cy.js\" --browser chrome",
+    "test:parallel:chrome": "npm run test:login:chrome & npm run test:main:chrome & npm run test:booking:chrome",
+
+    "test:folder:login:firefox": "npx cypress run --record --group login --spec \"cypress/e2e/login/*\" --browser firefox",
+    "test:folder:logic:firefox": "npx cypress run --record --group logic --spec \"cypress/e2e/logic/*\" --browser firefox",
+    "test:parallel:firefox.folder": "npm run test:folder:login:firefox & npm run test:folder:logic:firefox",
+
+    "test:login:firefox": "npx cypress run --record --group login-firefox --spec \"cypress/e2e/login/login.cy.js\" --browser firefox",
+    "test:main:firefox": "npx cypress run --record --group mainPage-firefox --spec \"cypress/e2e/logic/mainPage.cy.js\" --browser firefox",
+    "test:booking:firefox": "npx cypress run --record --group booking-firefox --spec \"cypress/e2e/logic/movieBooking.cy.js\" --browser firefox",
+    "test:parallel:firefox": "npm run test:login:firefox & npm run test:main:firefox & npm run test:booking:firefox",
+
+    "test:parallel:firefox+chrome": "npm run test:login:chrome & npm run test:main:chrome & npm run test:booking:chrome & npm run test:login:firefox & npm run test:main:firefox & npm run test:booking:firefox"
+
   },
   "author": "",
   "license": "ISC",
