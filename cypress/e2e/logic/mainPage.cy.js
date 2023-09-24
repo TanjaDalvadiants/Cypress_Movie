@@ -1,4 +1,4 @@
-import selectors from "../fixtures/selectors";
+import selectors from "../../fixtures/selectors";
 
 describe("main page spec", () => {
   it("should display 7 days", () => {

@@ -1,5 +1,5 @@
-import logins from "../fixtures/login";
-import selectors from "../fixtures/selectors";
+import logins from "../../fixtures/login";
+import selectors from "../../fixtures/selectors";
 
 describe("login spec", () => {
     
