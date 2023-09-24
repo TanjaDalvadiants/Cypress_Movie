@@ -4,11 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:login": "npx cypress run --record --group login --spec \"cypress/e2e/login.cy.js\" --ci-build-id 2",
-    "test:mainPage": "npx cypress run --record --group mainPage --spec \"cypress/e2e/mainPage.cy.js\" --ci-build-id 2",
-    "test:movieBooking": "npx cypress run --record --group movieBooking --spec \"cypress/e2e/movieBooking.cy.js\" --ci-build-id 2",
+    "test:login:chrome": "npx cypress run --record --group login --spec \"cypress/e2e/login.cy.js\" --browser chrome",
+    "test:mainPage:chrome": "npx cypress run --record --group mainPage --spec \"cypress/e2e/mainPage.cy.js\" --browser chrome",
+    "test:movieBooking:chrome": "npx cypress run --record --group movieBooking --spec \"cypress/e2e/movieBooking.cy.js\" --browser chrome",
+    "test:parallel:chrome": "npm run test:login:chrome & npm run test:mainPage:chrome  & npm run test:movieBooking:chrome",
 
-    "test:parallel": "npm run test:login & npm run test:mainPage  & npm run test:movieBooking"
+    "test:login:firefox": "npx cypress run --record --group login --spec \"cypress/e2e/login.cy.js\" --browser firefox",
+    "test:mainPage:firefox": "npx cypress run --record --group mainPage --spec \"cypress/e2e/mainPage.cy.js\" --browser firefox",
+    "test:movieBooking:firefox": "npx cypress run --record --group movieBooking --spec \"cypress/e2e/movieBooking.cy.js\" --browser firefox",
+    "test:parallel:firefox": "npm run test:login:firefox & npm run test:mainPage:firefox  & npm run test:movieBooking:firefox",
+
+    "test:login:electron": "npx cypress run --record --group login --spec \"cypress/e2e/login.cy.js\" --browser electron",
+    "test:mainPage:electron": "npx cypress run --record --group mainPage --spec \"cypress/e2e/mainPage.cy.js\" --browser electron",
+    "test:movieBooking:electron": "npx cypress run --record --group movieBooking --spec \"cypress/e2e/movieBooking.cy.js\" --browser electron",
+    "test:parallel:electron": "npm run test:login:electron & npm run test:mainPage:electron  & npm run test:movieBooking:electron"
   },
   "author": "",
   "license": "ISC",
